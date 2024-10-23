@@ -1,7 +1,6 @@
-package friendlybooking.mvp.dao;
+package com.friendlybooking.mvp.monolit.dao;
 
-import friendlybooking.mvp.model.Booking;
-import friendlybooking.mvp.model.Master;
+import com.friendlybooking.mvp.monolit.model.Booking;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

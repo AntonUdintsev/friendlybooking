@@ -1,7 +1,7 @@
-package friendlybooking.mvp.service;
+package com.friendlybooking.mvp.monolit.service;
 
-import friendlybooking.mvp.model.Booking;
-import friendlybooking.mvp.model.BookingRequest;
+import com.friendlybooking.mvp.monolit.model.Booking;
+import com.friendlybooking.mvp.monolit.model.BookingRequest;
 
 import java.util.List;
 

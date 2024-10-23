@@ -1,11 +1,9 @@
-package friendlybooking.mvp.controller;
+package com.friendlybooking.mvp.monolit.controller;
 
-import friendlybooking.mvp.model.User;
-import friendlybooking.mvp.model.UserLoginRequest;
-import friendlybooking.mvp.model.UserRegisterRequest;
-import friendlybooking.mvp.service.IUserService;
+import com.friendlybooking.mvp.monolit.model.User;
+import com.friendlybooking.mvp.monolit.model.UserRegisterRequest;
+import com.friendlybooking.mvp.monolit.service.IUserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,10 +19,5 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody UserRegisterRequest request) {
         return ResponseEntity.ok(userService.registerUser(request.getPhoneNumber(), request.getPassword()));
-    }
-
-    @PostMapping("/login")
-    public ResponseEntity<User> loginUser(@RequestBody UserLoginRequest request) {
-        return ResponseEntity.ok(userService.loginUser(request.getPhoneNumber(), request.getPassword()));
     }
 }

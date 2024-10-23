@@ -1,4 +1,4 @@
-package friendlybooking.mvp.service;
+package com.friendlybooking.mvp.monolit.service;
 
 public interface ISmsService {
     void sendSms(String phoneNumber, String message);

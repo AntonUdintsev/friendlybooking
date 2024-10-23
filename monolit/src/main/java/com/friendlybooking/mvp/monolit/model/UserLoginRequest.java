@@ -1,4 +1,4 @@
-package friendlybooking.mvp.model;
+package com.friendlybooking.mvp.monolit.model;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,13 +1,13 @@
-package friendlybooking.mvp.impl;
+package com.friendlybooking.mvp.monolit.impl;
 
-import friendlybooking.mvp.dao.BookingRepository;
-import friendlybooking.mvp.dao.MasterRepository;
-import friendlybooking.mvp.dao.OperationRepository;
-import friendlybooking.mvp.dao.UserRepository;
-import friendlybooking.mvp.model.BookingRequest;
-import friendlybooking.mvp.service.IBookingService;
-import friendlybooking.mvp.service.ISmsService;
-import friendlybooking.mvp.model.Booking;
+import com.friendlybooking.mvp.monolit.dao.BookingRepository;
+import com.friendlybooking.mvp.monolit.dao.MasterRepository;
+import com.friendlybooking.mvp.monolit.dao.OperationRepository;
+import com.friendlybooking.mvp.monolit.dao.UserRepository;
+import com.friendlybooking.mvp.monolit.model.Booking;
+import com.friendlybooking.mvp.monolit.model.BookingRequest;
+import com.friendlybooking.mvp.monolit.service.IBookingService;
+import com.friendlybooking.mvp.monolit.service.ISmsService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

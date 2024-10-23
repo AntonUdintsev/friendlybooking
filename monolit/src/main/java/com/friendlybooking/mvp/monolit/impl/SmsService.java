@@ -1,6 +1,6 @@
-package friendlybooking.mvp.impl;
+package com.friendlybooking.mvp.monolit.impl;
 
-import friendlybooking.mvp.service.ISmsService;
+import com.friendlybooking.mvp.monolit.service.ISmsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

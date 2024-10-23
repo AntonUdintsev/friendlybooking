@@ -1,6 +1,5 @@
-package friendlybooking.mvp.model;
+package com.friendlybooking.mvp.monolit.model;
 
-import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
