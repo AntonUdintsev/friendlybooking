@@ -74,5 +74,6 @@
 
     <modules>
         <module>auth-service</module>
+        <module>monolit</module>
     </modules>
 </project>
