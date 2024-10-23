@@ -78,29 +78,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-toolchains-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>toolchain</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <toolchains>
-                        <toolchain>
-                            <type>jdk</type>
-                            <provides>
-                                <version>21.0.5</version>
-                            </provides>
-                        </toolchain>
-                    </toolchains>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
-поменять путь в джава хом до 21 джавы и не париться
 </project>
