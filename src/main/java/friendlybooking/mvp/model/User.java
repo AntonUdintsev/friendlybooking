@@ -13,6 +13,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String phoneNumber;
     private String password; // храним хэш пароля
     private String role = "USER_ROLE"; // роль пользователя
