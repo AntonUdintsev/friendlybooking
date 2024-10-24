@@ -7,9 +7,9 @@ spring:
         registration:
           keycloak:
             client-id: booking-app
-            client-secret: <client-secret>
+            client-secret: "m7biPyVyCTvcGj6QeKqe0JR8FhfYjNgN"
             authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+            redirect-uri: "${baseUrl}/login/oauth2/code/keycloak"
         provider:
           keycloak:
-            issuer-uri: http://localhost:8080/realms/friendlybooking
+            issuer-uri: http://keycloak:8080/realms/friendlybooking
