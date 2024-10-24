@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/friendlybooking
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://keycloak:8080/realms/friendlybooking

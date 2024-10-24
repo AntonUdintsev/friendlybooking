@@ -1,66 +1,41 @@
 version: '3.8'
-
 services:
-  # Keycloak для аутентификации
   keycloak:
-    image: quay.io/keycloak/keycloak:latest
+    image: quay.io/keycloak/keycloak:21.0.1
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
-    command: ["start-dev"]
+    command: start-dev
     ports:
-      - "8180:8080"
+      - 8080:8080
     networks:
-      - booking-network
+      - keycloak-network
     depends_on:
-      - keycloak-db
+      - postgres
 
-  # База данных для Keycloak
-  keycloak-db:
-    image: postgres:14
-    environment:
-      - POSTGRES_DB=keycloak
-      - POSTGRES_USER=keycloak
-      - POSTGRES_PASSWORD=keycloak_password
-    networks:
-      - booking-network
-    volumes:
-      - keycloak-db-data:/var/lib/postgresql/data
-
-  # Основной сервис приложения
-  booking-app:
-    build:
-      context: ./monolit  # Путь к твоему проекту
-    environment:
-      - SPRING_PROFILES_ACTIVE=dev
-      - DB_HOST=booking-db
-      - DB_PORT=5432
-      - DB_NAME=booking
-      - DB_USER=booking_user
-      - DB_PASSWORD=booking_password
-      - BASE_URL=http://localhost:8080
+  auth-service:
+    build: ./auth-service
     ports:
-      - "8080:8080"
+      - 8081:8081
     networks:
-      - booking-network
-    depends_on:
-      - booking-db
-
-  # База данных для основного сервиса
-  booking-db:
-    image: postgres:14
+      - keycloak-network
     environment:
-      - POSTGRES_DB=booking
-      - POSTGRES_USER=booking_user
-      - POSTGRES_PASSWORD=booking_password
-    networks:
-      - booking-network
-    volumes:
-      - booking-db-data:/var/lib/postgresql/data
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - keycloak
+    restart: on-failure
 
-volumes:
-  keycloak-db-data:
-  booking-db-data:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: password
+    networks:
+      - keycloak-network
+    ports:
+      - 5432:5432
 
 networks:
-  booking-network:
+  keycloak-network:
+    driver: bridge
